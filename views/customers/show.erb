@@ -1,11 +1,2 @@
-<h1><%= @customer.forename %> (customer)</h1>
-
+<h1>Customer<%= @customer.forename %></h1>
 <p>Dress Size: <%= @customer.dress_size %></p>
-
-<h3>Rentals</h3>
-
-<ul>
-  <% @customer.rentals.each do |rental| %>
-  <li><%= rental.stock_id %></li>
-  <% end %>
-</ul>

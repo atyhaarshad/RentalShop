@@ -46,14 +46,14 @@ class Customer
   end
 
   def self.find(id)
-    sql = "SELECT FROM customers WHERE id = $1"
+    sql = "SELECT * FROM customers WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return Customer.new(results.first)
   end
 
   def rentals()
-    sql = "SELECT c.* FROM customers c INNER JOIN rentals r ON r.customer_id = WHERE r.customer_id = $1"
+    sql = "SELECT c.* FROM customers c INNER JOIN rentals r ON c.id = r.customer_id WHERE c.id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map{|rental| Rental.new(rental)}
