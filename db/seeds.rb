@@ -3,9 +3,9 @@ require_relative( "../models/rental.rb" )
 require_relative( "../models/stock.rb" )
 require("pry-byebug")
 
-# Customer.delete_all()
-# Stock.delete_all()
-# Rental.delete_all()
+Rental.delete_all()
+Customer.delete_all()
+Stock.delete_all()
 
 customer1 = Customer.new({
   "forename" => "Beyonce",
@@ -92,33 +92,50 @@ stock5 = Stock.new({
 })
 stock5.save()
 
+stock6 = Stock.new({
+  "name" => "test",
+  "category" => "test",
+  "size" => 10,
+  "designer" => "test",
+  "price" => 300,
+  "available" => true
+})
+stock6.save()
+
 rental1 = Rental.new({
   "customer_id" => customer1.id,
   "stock_id" => stock2.id,
-  "date_rented" => 2019-01-20
+  "date_rented" => "Apr-14-2019"
 })
 rental1.save()
 
 rental2 = Rental.new({
   "customer_id" => customer2.id,
   "stock_id" => stock4.id,
-  "date_rented" => 2019-01-20
+  "date_rented" => "Apr-14-2019"
 })
+rental2.save()
 
 rental3 = Rental.new({
   "customer_id" => customer3.id,
   "stock_id" => stock3.id,
-  "date_rented" => 2019-01-20
+  "date_rented" => "Apr-14-2019"
 })
+rental3.save()
 
 rental4 = Rental.new({
   "customer_id" => customer4.id,
   "stock_id" => stock1.id,
-  "date_rented" => 2019-01-20
+  "date_rented" => "Apr-14-2019"
 })
+rental4.save()
 
-stock5 = Rental.new({
+rental5 = Rental.new({
   "customer_id" => customer5.id,
-  "item_id" => stock5.id,
-  "date_rented" => 2019-01-20
+  "stock_id" => stock5.id,
+  "date_rented" => "Apr-14-2019"
 })
+rental5.save()
+
+binding.pry()
+nil

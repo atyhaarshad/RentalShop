@@ -1,0 +1,8 @@
+<h1>Customers</h1>
+
+<% for customer in @customers %>
+<p>Name: <%= customer.forename %></p> <p> <%=customer.surname %></p>
+<p>Dress Size: <%= customer.dress_size %> </p>
+<p><a href="/customer/<%= customer.id %>">Show Details</a></p>
+<hr />
+<% end %>

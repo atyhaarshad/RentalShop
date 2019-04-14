@@ -23,5 +23,5 @@ CREATE TABLE rentals(
   id SERIAL PRIMARY KEY,
   customer_id INT REFERENCES customers(id),
   stock_id INT REFERENCES stock(id),
-  date_rented VARCHAR(255)
+  date_rented DATE
 );
