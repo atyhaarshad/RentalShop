@@ -136,3 +136,6 @@ rental5 = Rental.new({
   "date_rented" => "Apr-14-2019"
 })
 rental5.save()
+
+binding.pry()
+nil

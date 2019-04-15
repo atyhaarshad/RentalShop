@@ -39,4 +39,5 @@ class Rental
     return results.map { |hash| Rental.new(hash)}
   end
 
+
 end

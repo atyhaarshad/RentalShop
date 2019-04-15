@@ -49,6 +49,14 @@ class Stock
     return results.map { |hash| Stock.new(hash)}
   end
 
+  def rentals()
+    sql = "SELECT * FROM rentals WHERE stock_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|rental| Rental.new(rental)}
+  end
+
+
   # def self.in_stock(id)
   #   sql = "SELECT FROM stock WHERE id = $1"
   #   values = [id]
@@ -57,7 +65,7 @@ class Stock
   # end
 
   # def check_available(stock1)
-  #   if stock1.available == true
+  #   if .available == true
   #     return "in stock"
   #   else
   #     return "not in stock, sorry"

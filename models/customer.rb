@@ -1,4 +1,6 @@
 require_relative( '../db/sqlrunner' )
+require_relative('rental.rb')
+require_relative('stock.rb')
 
 class Customer
 
@@ -53,7 +55,7 @@ class Customer
   end
 
   def rentals()
-    sql = "SELECT c.* FROM customers c INNER JOIN rentals r ON c.id = r.customer_id WHERE c.id = $1"
+    sql = "SELECT * FROM rentals WHERE customer_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map{|rental| Rental.new(rental)}
@@ -68,5 +70,12 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
+  def stock_info()
+    sql = "SELECT s.* FROM stock s INNER JOIN
+    rentals r ON r.stock_id = s.id WHERE r.customer_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |stock| Stock.new(stock)}
+  end
 
 end
