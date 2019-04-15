@@ -4,5 +4,12 @@
 <p>Name: <%= customer.forename %> <%=customer.surname %> </p>
 <p>Dress Size: <%= customer.dress_size %> </p>
 <p><a href="/customers/<%= customer.id %>">Show Rentals</a></p>
-<hr />
+
+
+<p>
+<form action="/customers/<%= customer.id %>/delete" method="DELETE">
+    <input class="btn" type="submit" value="remove" />
+  </form>
+  <hr />
+</p>
 <% end %>

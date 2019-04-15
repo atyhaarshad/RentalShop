@@ -13,3 +13,8 @@ get '/customers/:id' do
   @customer = Customer.find(params['id'].to_i)
   erb(:"customers/show")
 end
+
+get '/customers/:id/delete' do
+  Customer.delete(params[:id])
+  redirect to("/customers")
+end

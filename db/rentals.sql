@@ -21,7 +21,7 @@ CREATE TABLE stock(
 
 CREATE TABLE rentals(
   id SERIAL PRIMARY KEY,
-  customer_id INT REFERENCES customers(id),
-  stock_id INT REFERENCES stock(id),
+  customer_id INT REFERENCES customers(id) ON DELETE CASCADE,
+  stock_id INT REFERENCES stock(id) ON DELETE CASCADE,
   date_rented DATE
 );
