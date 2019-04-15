@@ -1,3 +1,4 @@
+<div>
 <h1>My Customers</h1>
 
 <% for customer in @customers %>
@@ -5,11 +6,11 @@
 <p>Dress Size: <%= customer.dress_size %> </p>
 <p><a href="/customers/<%= customer.id %>">Show Rentals</a></p>
 
-
 <p>
 <form action="/customers/<%= customer.id %>/delete" method="DELETE">
     <input class="btn" type="submit" value="remove" />
   </form>
   <hr />
 </p>
+</div>
 <% end %>

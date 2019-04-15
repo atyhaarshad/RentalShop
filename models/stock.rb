@@ -13,7 +13,7 @@ class Stock
   end
 
   def save()
-    sql = "INSERT INTO stock
+    sql = "INSERT INTO stocks
     (
       name,
       category,
@@ -33,24 +33,24 @@ class Stock
   end
 
   def self.delete_all()
-    sql = "DELETE FROM stock"
+    sql = "DELETE FROM stocks"
     SqlRunner.run(sql)
   end
 
   def self.delete(id)
-    sql = "DELETE FROM stock WHERE id = $1"
+    sql = "DELETE FROM stocks WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
   end
 
   def self.all()
-    sql = "SELECT * FROM stock"
+    sql = "SELECT * FROM stocks"
     results = SqlRunner.run(sql)
     return results.map { |hash| Stock.new(hash)}
   end
 
   def rentals()
-    sql = "SELECT * FROM rentals WHERE stock_id = $1"
+    sql = "SELECT * FROM rentals WHERE dress_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map{|rental| Rental.new(rental)}

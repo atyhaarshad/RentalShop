@@ -42,7 +42,7 @@ customer5 = Customer.new({
 })
 customer5.save()
 
-stock1 = Stock.new({
+dress1 = Stock.new({
   "name" => "Long Black Lace Dress",
   "category" => "party dress",
   "designer" => "Gucci",
@@ -50,9 +50,9 @@ stock1 = Stock.new({
   "price" => 500,
   "available" => false
 })
-stock1.save()
+dress1.save()
 
-stock2 = Stock.new({
+dress2 = Stock.new({
   "name" => "Snakeskin Print Gown",
   "category" => "evening dress",
   "designer" => "Elie Saab",
@@ -60,9 +60,9 @@ stock2 = Stock.new({
   "price" => 600,
   "available" => true
 })
-stock2.save()
+dress2.save()
 
-stock3 = Stock.new({
+dress3 = Stock.new({
   "name" => "Long-sleeved Red Dress",
   "category" => "evening dress",
   "size" => 8,
@@ -70,9 +70,9 @@ stock3 = Stock.new({
   "price" => 800,
   "available" => true
 })
-stock3.save()
+dress3.save()
 
-stock4 = Stock.new({
+dress4 = Stock.new({
   "name" => "Crystal Embellished Gown",
   "category" => "evening dress",
   "size" => 10,
@@ -80,9 +80,9 @@ stock4 = Stock.new({
   "price" => 750,
   "available" => true
 })
-stock4.save()
+dress4.save()
 
-stock5 = Stock.new({
+dress5 = Stock.new({
   "name" => "Black dress",
   "category" => "party dress",
   "size" => 10,
@@ -90,9 +90,9 @@ stock5 = Stock.new({
   "price" => 300,
   "available" => true
 })
-stock5.save()
+dress5.save()
 
-stock6 = Stock.new({
+dress6 = Stock.new({
   "name" => "test",
   "category" => "test",
   "size" => 10,
@@ -100,39 +100,39 @@ stock6 = Stock.new({
   "price" => 300,
   "available" => true
 })
-stock6.save()
+dress6.save()
 
 rental1 = Rental.new({
   "customer_id" => customer1.id,
-  "stock_id" => stock2.id,
+  "stock_id" => dress2.id,
   "date_rented" => "Apr-14-2019"
 })
 rental1.save()
 
 rental2 = Rental.new({
   "customer_id" => customer2.id,
-  "stock_id" => stock4.id,
+  "stock_id" => dress4.id,
   "date_rented" => "Apr-14-2019"
 })
 rental2.save()
 
 rental3 = Rental.new({
   "customer_id" => customer3.id,
-  "stock_id" => stock3.id,
+  "stock_id" => dress3.id,
   "date_rented" => "Apr-14-2019"
 })
 rental3.save()
 
 rental4 = Rental.new({
   "customer_id" => customer4.id,
-  "stock_id" => stock1.id,
+  "stock_id" => dress1.id,
   "date_rented" => "Apr-14-2019"
 })
 rental4.save()
 
 rental5 = Rental.new({
   "customer_id" => customer5.id,
-  "stock_id" => stock5.id,
+  "stock_id" => dress5.id,
   "date_rented" => "Apr-14-2019"
 })
 rental5.save()

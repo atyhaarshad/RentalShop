@@ -3,14 +3,14 @@
   <% @customer.rentals.each do |rental| %>
   <li>Rental ID: <%= rental.id %></li>
   <li>Customer ID: <%= rental.customer_id %></li>
-  <li>Stock ID: <%= rental.stock_id%></li>
+  <li>Dress ID: <%= rental.stock_id%></li>
   <% end %>
 
-  <% @customer.stock_info.each do |stock| %>
-  <li>Dress name: <%= stock.name %></li>
-  <li>Category: <%= stock.category %></li>
-  <li>Designer: <%= stock.designer%></li>
-  <li>Price £<%= stock.price%></li>
-  <li>Dress Size: <%= stock.size%></li>
+  <% @customer.dress_info.each do |dress| %>
+  <li>Dress name: <%= dress.name %></li>
+  <li>Category: <%= dress.category %></li>
+  <li>Designer: <%= dress.designer%></li>
+  <li>Price £<%= dress.price%></li>
+  <li>Dress Size: <%= dress.size%></li>
   <% end %>
 </ul>

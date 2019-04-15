@@ -70,8 +70,8 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
-  def stock_info()
-    sql = "SELECT s.* FROM stock s INNER JOIN
+  def dress_info()
+    sql = "SELECT s.* FROM stocks s INNER JOIN
     rentals r ON r.stock_id = s.id WHERE r.customer_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)

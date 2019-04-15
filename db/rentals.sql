@@ -1,6 +1,6 @@
 DROP TABLE rentals;
 DROP table customers;
-DROP TABLE stock;
+DROP TABLE stocks;
 
 CREATE TABLE customers(
   id SERIAL PRIMARY KEY,
@@ -9,7 +9,7 @@ CREATE TABLE customers(
   dress_size INT
 );
 
-CREATE TABLE stock(
+CREATE TABLE stocks(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   category VARCHAR(255),
@@ -22,6 +22,6 @@ CREATE TABLE stock(
 CREATE TABLE rentals(
   id SERIAL PRIMARY KEY,
   customer_id INT REFERENCES customers(id) ON DELETE CASCADE,
-  stock_id INT REFERENCES stock(id) ON DELETE CASCADE,
+  stock_id INT REFERENCES stocks(id) ON DELETE CASCADE,
   date_rented DATE
 );
