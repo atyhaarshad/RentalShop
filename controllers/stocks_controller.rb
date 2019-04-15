@@ -8,3 +8,13 @@ get '/stocks' do
   @stocks = Stock.all()
   erb(:"stocks/index")
 end
+
+get '/stocks/:id' do
+  @stock = Stock.find(params['id'].to_i)
+  erb(:"stocks/show")
+end
+
+get '/stocks/:id/delete' do
+  Stock.delete(params[:id])
+  redirect to("/stocks")
+end

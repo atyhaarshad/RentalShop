@@ -1,16 +1,16 @@
 <h1><%= @customer.forename %> has rented:</h1>
 <ul>
-  <% @customer.rentals.each do |rental| %>
-  <li>Rental ID: <%= rental.id %></li>
-  <li>Customer ID: <%= rental.customer_id %></li>
-  <li>Dress ID: <%= rental.stock_id%></li>
-  <% end %>
 
   <% @customer.dress_info.each do |dress| %>
-  <li>Dress name: <%= dress.name %></li>
-  <li>Category: <%= dress.category %></li>
-  <li>Designer: <%= dress.designer%></li>
-  <li>Price £<%= dress.price%></li>
-  <li>Dress Size: <%= dress.size%></li>
+  <li>The <%= dress.name %></li>
+  <li>In size <%= dress.size%></li>
+  <li> <%= dress.category %></li>
+  <li>Designed by <%= dress.designer%></li>
+  <li>Costing £<%= dress.price%></li>
   <% end %>
+
+  <% @customer.rentals.each do |rental| %>
+  <li>Date rented: <%= rental.date_rented %></li>
+  <% end %>
+
 </ul>

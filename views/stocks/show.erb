@@ -1,0 +1,10 @@
+<h1><%= @stock.name %></h1>
+<h3>Designed by <%= @stock.designer %></h3>
+<h3><%= @stock.category %></h3>
+<h3>Price £<%= @stock.price %></h3>
+<h3>In size <%= @stock.size %></h3>
+
+
+<% @stock.customer_info.each do |customer| %>
+<p>Rented by: <%= customer.forename %></p>
+<% end %>

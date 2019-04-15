@@ -56,6 +56,21 @@ class Stock
     return results.map{|rental| Rental.new(rental)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM stocks WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Stock.new(results.first)
+  end
+
+  def customer_info()
+    sql = "SELECT c.* FROM customers c INNER JOIN rentals r
+    ON r.customer_id = c.id WHERE r.stock_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|customer| Customer.new(customer)}
+  end
+
 
   # def self.in_stock(id)
   #   sql = "SELECT FROM stock WHERE id = $1"
@@ -63,7 +78,7 @@ class Stock
   #   results = SqlRunner.run(sql, values)
   #   return Stock.new(results.first)
   # end
-
+  #
   # def check_available(stock1)
   #   if .available == true
   #     return "in stock"

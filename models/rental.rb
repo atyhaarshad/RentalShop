@@ -1,4 +1,6 @@
 require_relative( '../db/sqlrunner' )
+require_relative( 'customer.rb' )
+require_relative( 'stock.rb' )
 
 class Rental
 
@@ -37,6 +39,29 @@ class Rental
     sql = "SELECT * FROM rentals"
     results = SqlRunner.run(sql)
     return results.map { |hash| Rental.new(hash)}
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM rentals
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
+  def customer()
+    sql = "SELECT * FROM customers
+    WHERE id = $1"
+    values = [@customer_id]
+    results = SqlRunner.run( sql, values )
+    return Customer.new( results.first )
+  end
+
+  def stock()
+    sql = "SELECT * FROM stocks
+    WHERE id = $1"
+    values = [@stock_id]
+    results = SqlRunner.run( sql, values )
+    return Stock.new( results.first )
   end
 
 
