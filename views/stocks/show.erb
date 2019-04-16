@@ -1,10 +1,19 @@
-<h1><%= @stock.name %></h1>
-<h3>Designed by <%= @stock.designer %></h3>
-<h3><%= @stock.category %></h3>
-<h3>Price £<%= @stock.price %></h3>
-<h3>In size <%= @stock.size %></h3>
+<h1>Edit stock</h1>
+<h3><a href="/stocks">Back to Stock</a></h3>
+<div>
 
+  <form action="/stocks/<%= @stock.id %>/update" method="POST">
 
-<% @stock.customer_info.each do |customer| %>
-<p>Rented by: <%= customer.forename %></p>
-<% end %>
+    Name: <input type="text" value="<%= @stock.name %>" placeholder="<%= @stock.name %>" name="name"><br>
+    Designed By: <input type="text" value="<%= @stock.designer %>" placeholder="<%= @stock.designer %>" name="designer"><br>
+    Category: <input type="text" value="<%= @stock.category %>" placeholder="<%= @stock.category %>" name="category"><br>
+    Price: <input type="text" value="<%= @stock.price %>" placeholder="<%= @stock.price %>" name="price"><br>
+    Size: <input type="text"  value="<%= @stock.size %>" placeholder="<%= @stock.size %>" name="size"><br>
+
+    <input type="submit" value="UPDATE">
+  </form>
+
+ <% @stock.customer_info.each do |customer| %>
+ <p>Rented by: <%= customer.forename %> <%= customer.surname %></p>
+ <% end %>
+</div>

@@ -11,6 +11,12 @@ get '/rentals' do
   erb(:"rentals/index")
 end
 
+get '/rentals/new' do
+  @customers = Customer.all
+  @stocks = Stock.all
+  erb(:"rentals/new")
+end
+
 get '/rentals/:id' do
   @rental = Rental.find(params['id'].to_i)
   erb(:"rentals/show")

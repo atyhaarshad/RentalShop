@@ -5,7 +5,10 @@ require_relative('../models/stock.rb')
 also_reload('../models/*')
 
 get '/stocks' do
+
+  p "getting all"
   @stocks = Stock.all()
+  p @stocks
   erb(:"stocks/index")
 end
 
@@ -14,7 +17,20 @@ get '/stocks/:id' do
   erb(:"stocks/show")
 end
 
-get '/stocks/:id/delete' do
+delete '/stocks/:id/delete' do
   Stock.delete(params[:id])
   redirect to("/stocks")
+end
+
+post '/stocks/:id/update' do
+
+  stock = Stock.new(params)
+  stock.update()
+  redirect to("stocks")
+end
+
+post '/stocks' do
+  @stock = Stock.new(params)
+  @stock.save()
+  redirect('/stocks')
 end

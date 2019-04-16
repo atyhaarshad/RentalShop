@@ -6,7 +6,7 @@ class Stock
 
   attr_reader :name, :category, :size, :designer, :price, :available
   attr_accessor :id
-  
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
@@ -76,6 +76,15 @@ class Stock
     return results.map {|customer| Customer.new(customer)}
   end
 
+  def update()
+    sql = "UPDATE stocks SET
+    (name, category, size, designer, price, available) =
+    ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7"
+    values = [@name, @category, @size, @designer, @price, @available, @id]
 
+    p values
+    SqlRunner.run(sql, values)
+  end
 
 end
