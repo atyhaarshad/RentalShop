@@ -1,5 +1,27 @@
 <h1> All Rentals </h1>
 
+<table>
+
+  <tr>
+  <th>Customer Name</th>
+  <th>Item</th>
+  <th>Date Rented</th>
+  <th> </th>
+  </tr>
+
   <% for rental in @rentals %>
-<p><%=rental.customer.forename()%> rented <%=rental.stock.name()%> on <%=rental.date_rented()%></p>
-<%end%>
+  <tr>
+    <td><%=rental.customer.forename()%></td>
+    <td>
+      <a href="<%= "/stocks/" + rental.stock.id.to_s %>">
+        <%=rental.stock.name%>
+      </a>
+    </td>
+    <td><%=rental.date_rented()%></td>
+    <td>
+      <form action="/rentals/<%= rental.id %>/delete" method="DELETE">
+        <input class="btn" type="submit" value="remove" />
+      </form></td>
+  </tr>
+  <%end%>
+</table>

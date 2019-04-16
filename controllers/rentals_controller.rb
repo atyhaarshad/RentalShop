@@ -15,3 +15,8 @@ get '/rentals/:id' do
   @rental = Rental.find(params['id'].to_i)
   erb(:"rentals/show")
 end
+
+get '/rentals/:id/delete' do
+  Customer.delete(params[:id])
+  redirect to("/rentals")
+end

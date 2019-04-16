@@ -4,7 +4,8 @@ require_relative('stock.rb')
 
 class Customer
 
-  attr_reader :id, :forename, :surname, :dress_size
+  attr_reader  :forename, :surname, :dress_size
+  attr_accessor :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
