@@ -1,3 +1,2 @@
-<h1> Rental Info</h1>
-for rental in @rentals
-rental.customer.forename rented rental.stock.name
+<%= @rental.customer.each do |customer|%><%end%>
+<p>Rented by: <%= customer.forename%></p>

@@ -1,3 +1,5 @@
-<h1> Rental Info</h1>
-for rental in @rentals
-rental.customer.forename rented rental.stock.name
+<h1> All Rentals </h1>
+
+  <% for rental in @rentals %>
+  <p><%= rental.customer %> rented <%= rental.stock%> </p>
+  <%end%>
