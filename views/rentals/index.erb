@@ -1,5 +1,5 @@
 <h1> All Rentals </h1>
 
   <% for rental in @rentals %>
-  <p><%= rental.customer %> rented <%= rental.stock%> </p>
-  <%end%>
+<p><%=rental.customer.forename()%> rented <%=rental.stock.name()%> on <%=rental.date_rented()%></p>
+<%end%>

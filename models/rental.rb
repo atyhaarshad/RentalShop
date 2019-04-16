@@ -4,7 +4,8 @@ require_relative( 'stock.rb' )
 
 class Rental
 
-  attr_reader :id, :customer_id, :stock_id, :date_rented
+  attr_accessor :customer_id, :stock_id
+  attr_reader :id, :date_rented
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

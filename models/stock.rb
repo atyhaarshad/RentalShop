@@ -1,3 +1,7 @@
+require_relative( '../db/sqlrunner' )
+require_relative( 'customer.rb' )
+require_relative( 'rental.rb' )
+
 class Stock
 
   attr_reader :id, :name, :category, :size, :designer, :price, :available
@@ -72,19 +76,5 @@ class Stock
   end
 
 
-  # def self.in_stock(id)
-  #   sql = "SELECT FROM stock WHERE id = $1"
-  #   values = [id]
-  #   results = SqlRunner.run(sql, values)
-  #   return Stock.new(results.first)
-  # end
-  #
-  # def check_available(stock1)
-  #   if .available == true
-  #     return "in stock"
-  #   else
-  #     return "not in stock, sorry"
-  #   end
-  # end
 
 end
