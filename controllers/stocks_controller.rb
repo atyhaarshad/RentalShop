@@ -17,7 +17,7 @@ get '/stocks/:id' do
   erb(:"stocks/show")
 end
 
-delete '/stocks/:id/delete' do
+get '/stocks/:id/delete' do
   Stock.delete(params[:id])
   redirect to("/stocks")
 end

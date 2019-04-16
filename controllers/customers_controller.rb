@@ -14,7 +14,7 @@ get '/customers/:id' do
   erb(:"customers/show")
 end
 
-delete '/customers/:id/delete' do
+get '/customers/:id/delete' do
   Customer.delete(params[:id])
   redirect to("/customers")
 end
