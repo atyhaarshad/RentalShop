@@ -82,9 +82,13 @@ class Stock
     ($1, $2, $3, $4, $5, $6)
     WHERE id = $7"
     values = [@name, @category, @size, @designer, @price, @available, @id]
-
-    p values
     SqlRunner.run(sql, values)
+  end
+
+  def rented_stock()
+    sql = "SELECT * FROM stocks WHERE available = true"
+    results = SqlRunner(sql)
+    return results.map { |stock|Stock.new(stock)  }
   end
 
 end
