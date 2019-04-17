@@ -19,7 +19,12 @@
         <option value="<%= stock.id %>"><%= stock.name %></option>
   <%end%>
   </select>
-</label>
+
+  <label for="start">Date rented:</label>
+<input type="date" id="rent_date" name="rent_date"
+       value="2019-04-17"
+       min="2019-04-17" max="2019-12-31">
+
 <input type="submit" value="Add">
 </form>
 <div>

@@ -14,6 +14,7 @@ end
 get '/rentals/new' do
   @customers = Customer.all
   @stocks = Stock.all
+  @rentals = Rental.all
   erb(:"rentals/new")
 end
 

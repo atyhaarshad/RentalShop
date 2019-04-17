@@ -8,3 +8,7 @@ require_relative('controllers/rentals_controller')
 get '/' do
   erb( :index )
 end
+
+get '/about' do
+  erb( :show)
+end
