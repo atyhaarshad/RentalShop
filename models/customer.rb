@@ -4,8 +4,8 @@ require_relative('stock.rb')
 
 class Customer
 
-  attr_reader  :forename, :surname, :dress_size
-  attr_accessor :id
+  attr_reader  :id
+  attr_accessor :forename, :surname, :dress_size
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -27,7 +27,9 @@ class Customer
     )
     RETURNING id"
     values = [@forename, @surname, @dress_size]
+
     results = SqlRunner.run(sql, values)
+
     @id = results.first()['id'].to_i
   end
 

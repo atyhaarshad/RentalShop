@@ -1,11 +1,47 @@
-<h1> New customer!</h1>
-<form action="/new" method="post">
-  <label>Add new customer:
-  <select name="id">
-    <% for customer in @customers %>
-    <option value="<%= customer.id %>"><%= customer.forename %></option>
-    <% end %>
-  </select>
-</label>
+<h1>New customer!</h1>
 
+<form
+  action="/customers"
+  method="POST">
+  <label for="forename">Forename:</label>
+
+  <br/>
+
+  <input
+    id="forename"
+    name="forename"
+    type="text"
+    required/>
+  <br/>
+
+  <label for="surname">Surname:</label>
+
+  <br/>
+
+  <input
+    id="surname"
+    name="surname"
+    type="text"
+    required/>
+  <br/>
+
+  <br/>
+
+  <label for="“dress_size”">Dress Size:</label>
+
+  <br/>
+
+  <input
+    id="dress_size"
+    name="dress_size"
+    type="integer"
+    required/>
+  <br/>
+
+  <br/>
+
+  <input
+    type="submit"
+    value="Add Customer"
+    =""/>
 </form>

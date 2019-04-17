@@ -1,18 +1,28 @@
 <h1>My Stock</h1>
 
 <% for stock in @stocks %>
-<p>Name: <%= stock.name %> </p>
-<p>Category: <%=stock.category %></p>
-<p>Designer: <%= stock.designer %> </p>
-<p>Price <%= stock.price %> </p>
-<p>Size: <%= stock.size %> </p>
-<p><a href="/stocks/<%= stock.id %>">Show Stock</a></p>
 
-<p></div>
-<form action="/stocks/<%= stock.id %>/delete" method="DELETE">
-    <input class="btn" type="submit" value="remove" />
+<div class="card">
+  <p>Name: <%= stock.name %></p>
+
+  <p>Category: <%=stock.category %></p>
+
+  <p>Designer: <%= stock.designer %></p>
+
+  <p>Price <%= stock.price %></p>
+
+  <p>Size: <%= stock.size %></p>
+
+  <p><a href="/stocks/<%= stock.id %>">Show Stock</a></p>
+
+  <form
+    action="/stocks/<%= stock.id %>/delete"
+    method="DELETE">
+    <input
+      class="button"
+      type="submit"
+      value="remove"/>
   </form>
-  <hr />
-</p>
 </div>
+
 <% end %>

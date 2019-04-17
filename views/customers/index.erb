@@ -1,16 +1,26 @@
 <div>
-<h1>My Customers</h1>
+  <h1>My Customers</h1>
 
-<% for customer in @customers %>
-<p>Name: <%= customer.forename %> <%=customer.surname %> </p>
-<p>Dress Size: <%= customer.dress_size %> </p>
-<p><a href="/customers/<%= customer.id %>">Show Rentals</a></p>
+  <h3><a href="/customers/new">Add new customer</a></h3>
 
-<p>
-<form action="/customers/<%= customer.id %>/delete" method="DELETE">
-    <input class="btn" type="submit" value="remove" />
-  </form>
-  <hr />
-</p>
+  <% for customer in @customers %>
+
+  <div class="card">
+    <p>Name: <%= customer.forename %> <%=customer.surname %></p>
+
+    <p>Dress Size: <%= customer.dress_size %></p>
+
+    <p><a href="/customers/<%= customer.id %>">Show Rentals</a></p>
+
+    <form
+      action="/customers/<%= customer.id %>/delete"
+      method="DELETE">
+      <input
+        class="button"
+        type="submit"
+        value="remove"/>
+    </form>
+  </div>
+
+  <% end %>
 </div>
-<% end %>

@@ -1,30 +1,47 @@
 <h3><a href="/rentals">Back to Rentals</a></h3>
+
 <h1>Add new rental</h1>
 
-<form action="/rentals" method="post">
+<form
+  action="/rentals"
+  method="post">
   <label>
     Select a customer:
+
     <select name="customer_id">
       <% for customer in @customers %>
+
       <option value="<%= customer.id %>"><%= customer.forename %></option>
+
       <%end%>
     </select>
   </label>
-<hr></hr>
 
-<label>
-  Select stock item:
+  <hr></hr>
+
+  <label>
+    Select stock item:
+
     <select name="stock_id">
       <% for stock in @stocks %>
-        <option value="<%= stock.id %>"><%= stock.name %></option>
-  <%end%>
-  </select>
 
-  <label for="start">Date rented:</label>
-<input type="date" id="rent_date" name="rent_date"
-       value="2019-04-17"
-       min="2019-04-17" max="2019-12-31">
+      <option value="<%= stock.id %>"><%= stock.name %></option>
 
-<input type="submit" value="Add">
+      <%end%>
+    </select>
+
+    <label for="start">Date rented:</label>
+
+    <input
+      id="rent_date"
+      min="2019-04-17"
+      max="2019-12-31"
+      name="rent_date"
+      type="date"
+      value="2019-04-17"/>
+    <input
+      type="submit"
+      value="Add"/>
+    <div></div>
+  </label>
 </form>
-<div>
