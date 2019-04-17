@@ -10,7 +10,7 @@
 
     <p>Dress Size: <%= customer.dress_size %></p>
 
-    <p><a href="/customers/<%= customer.id %>">Show Rentals</a></p>
+    <p><a href="/customers/<%= customer.id %>">More Details</a></p>
 
     <form
       action="/customers/<%= customer.id %>/delete"
@@ -18,7 +18,7 @@
       <input
         class="button"
         type="submit"
-        value="remove"/>
+        value="Remove"/>
     </form>
   </div>
 

@@ -1,4 +1,4 @@
-<h1><%= @customer.forename %> has rented:</h1>
+<h3><%= @customer.forename %> has rented:</h3>
 
 <ul>
   <% @customer.dress_info.each do |dress| %>
@@ -13,10 +13,7 @@
 
   <li>Costing £<%= dress.price%></li>
 
-  <hr></hr>
-
   <% end %>    <% @customer.rentals.each do |rental| %>
-
   <li>Date rented: <%= rental.date_rented %></li>
 
   <% end %>
