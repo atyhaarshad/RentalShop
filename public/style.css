@@ -13,7 +13,7 @@
   border-radius: 10px;
 }
 
-header.WebName {
+header.webName {
   text-align: center;
   font-size: 250%;
   color: black;
@@ -45,4 +45,8 @@ header.WebName {
 .secondary {
 
  background-color: #97315B;
+}
+
+* {
+ font-family: 'Roboto' !important;
 }
